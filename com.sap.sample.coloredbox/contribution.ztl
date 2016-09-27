@@ -1,0 +1,8 @@
+class [componentID] extends Component {
+
+	/* Returns the current color of the box. */
+	String getColor() {*
+		return this.color;
+	*} 
+	
+}

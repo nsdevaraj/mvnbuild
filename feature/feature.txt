@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="[componentID].feature" label="Extensions for SAP BusinessObjects Design Studio" version="[componentVer].0" provider-name="Solutions">
+   <description url="">{description}</description>
+   <copyright>All rights reserved.</copyright>
+   <plugin id="com.sap.sample.coloredbox" download-size="0" install-size="0" version="0.0.0" unpack="false" />
+</feature>

@@ -1,0 +1,6 @@
+Generate your key for sigining the jar
+keytool -genkey -dname "cn=Licensed User, ou= R&D, o=Solutions" -alias adam -keypass ilu123 -keystore C:\temp\full -storepass ilu123
+
+For generation of artifacts and content jar files
+java -jar "C:\Program Files (x86)\SAP BusinessObjects\Design Studio\plugins\org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar" -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher -metadataRepository file:/C:/temp/p2repo -artifactRepository file:/C:/temp/p2repo -source "C:\Program Files (x86)\SAP BusinessObjects\Design Studio" -compress -publishArtifacts
+	

@@ -1,5 +1,5 @@
 @ECHO OFF
-call :HERE 
+goto :HERE 
 :Trim
 SetLocal EnableDelayedExpansion
 set Params=%*
@@ -15,10 +15,10 @@ for /D %%d in (*) do (
 		set foldertarget=%str1%
 	)
 ) 
-IF "%1"=="" ( SET "folder=%foldertarget%" ) ELSE ( SET "folder=%1" )
+IF "%1"=="" ( SET "folderuntrim=%foldertarget%" ) ELSE ( SET "folder=%1" )
 IF "%2"=="" ( SET "ver=1.0" ) ELSE ( SET "ver=%2" )
 
-call :Trim folder %folder% 
+call :Trim folder %folderuntrim% 
 rem master pom
 copy pom.txt pom.xml
 copy cpom.txt %folder%\pom.xml

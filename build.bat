@@ -5,8 +5,8 @@ SetLocal EnableDelayedExpansion
 set Params=%*
 for /f "tokens=1*" %%a in ("!Params!") do EndLocal & set %1=%%b
 exit /b
-:HERE 
- 
+:HERE
+
 for /D %%d in (*) do ( 
 	IF NOT "%%d"=="feature" IF NOT "%%d"=="p2repo" IF NOT "%%d"=="site" IF NOT "%%d"=="updatesite" set str1=%%d 
 	echo %%d | findstr /C:"feature">nul && (
@@ -37,4 +37,3 @@ copy site\pom.txt site\pom.xml
 move site\*.xml updatesite\
 PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%~dpn0.ps1' -compID %folder% -version %ver%"
 mvn clean install
-copy updatesite\target\Suite-%ver%.0.zip Suite-%ver%.0.zip

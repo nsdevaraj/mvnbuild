@@ -1,4 +1,12 @@
 @ECHO OFF
+call :HERE 
+:Trim
+SetLocal EnableDelayedExpansion
+set Params=%*
+for /f "tokens=1*" %%a in ("!Params!") do EndLocal & set %1=%%b
+exit /b
+:HERE 
+ 
 for /D %%d in (*) do ( 
 	IF NOT "%%d"=="feature" IF NOT "%%d"=="p2repo" IF NOT "%%d"=="site" IF NOT "%%d"=="updatesite" set str1=%%d 
 	echo %%d | findstr /C:"feature">nul && (
@@ -9,6 +17,8 @@ for /D %%d in (*) do (
 ) 
 IF "%1"=="" ( SET "folder=%foldertarget%" ) ELSE ( SET "folder=%1" )
 IF "%2"=="" ( SET "ver=1.0" ) ELSE ( SET "ver=%2" )
+
+call :Trim folder %folder% 
 rem master pom
 copy pom.txt pom.xml
 copy cpom.txt %folder%\pom.xml

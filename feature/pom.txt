@@ -3,7 +3,7 @@
    <parent>
       <groupId>[componentID].master</groupId>
       <artifactId>parent</artifactId>
-      <version>version="[componentVer].0"</version>
+      <version>[componentVer].0</version>
    </parent>
    <modelVersion>4.0.0</modelVersion>
    <artifactId>[componentID].feature</artifactId>
